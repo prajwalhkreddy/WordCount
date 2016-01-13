@@ -5,13 +5,16 @@ import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.concurrent.ConcurrentHashMap;
+
 import org.springframework.stereotype.Service;
+
 import com.prajwal.wc.bean.ResponseBean;
 
 @Service
 public class WordCountService {
 
-	Map<String, ResponseBean> countMap = new HashMap<String, ResponseBean>();
+	Map<String, ResponseBean> countMap = new ConcurrentHashMap<String, ResponseBean>();
 	ResponseBean rb = null;
 	ResponseBean rq = null;
 
